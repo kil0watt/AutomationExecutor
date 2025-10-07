@@ -1,0 +1,21 @@
+driver.find_element(AppiumBy.ACCESSIBILITY_ID, "Close").click()
+WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//*[@text='Allow']")));
+driver.find_element(By.XPATH, "//*[@text='Allow']").click();
+driver.find_element(AppiumBy.ACCESSIBILITY_ID, "Close sheet").click()
+driver.find_element(By.XPATH, "//*[@text='Flights']").click()
+driver.find_element(By.XPATH, "//*[@text='One-way']").click()
+driver.find_element(By.XPATH, "//*[@resource-id='LeavingFromButton']").click()
+driver.find_element(By.XPATH, "//*[@resource-id='SearchLocation']").click()
+driver.find_element(By.XPATH, "//*[@resource-id='SearchLocationInput']").clear();
+driver.find_element(By.XPATH, "//*[@resource-id='SearchLocationInput']").send_keys("Cochin");
+driver.find_element(By.XPATH, "//*[@text='Cochin (COK - Cochin Intl.)' and @focusable='false']").click()
+driver.find_element(By.XPATH, "//android.view.View[@resource-id='GoingToButton']").click()
+driver.find_element(By.XPATH, "//*[@resource-id='SearchLocationInput']").click()
+driver.find_element(By.XPATH, "//android.widget.EditText[@resource-id='SearchLocationInput']").clear()
+driver.find_element(By.XPATH, "//android.widget.EditText[@resource-id='SearchLocationInput']").send_keys("Bengaluru")
+driver.find_element(By.XPATH, "//*[@text='Bengaluru (BLR - Kempegowda Intl.)' and @focusable='false']").click()
+driver.find_element(By.XPATH, "//*[@resource-id='SearchButton']").click()
+flight_element = driver.find_element(By.XPATH, "//*[contains(@content-desc, 'Air India') and @class='androidx.cardview.widget.CardView']")
+flight_element.click()
+driver.find_element(By.XPATH, "//*[@text='Select']").click()
+driver.find_element(By.XPATH, "//*[@text='Check out']").click()
