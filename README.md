@@ -11,8 +11,7 @@ npm install --save-dev \
   @wdio/appium-service \
   @wdio/spec-reporter \
   webdriverio \
-  appium \
-  chai
+  appium
 
 appium driver install uiautomator2
 
@@ -20,5 +19,6 @@ appium driver install uiautomator2
 
 ### Execution steps
 1. Start Appium.```appium
-2. Start your Android emulator (if not already running). ```sh ./start_emulator.sh
-3. execute this command to run the project: ```npx wdio run wdio.conf.js```
+2. Start your Android emulator (if not already running). `sh ./start_emulator.sh`
+3. Update apk path in wdio.conf.js `'appium:app':`
+3. execute this command to run the project: `npx wdio run wdio.conf.js`
