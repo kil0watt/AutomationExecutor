@@ -1,0 +1,20 @@
+driver.find_element(AppiumBy.ACCESSIBILITY_ID, "Close").click()
+WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//*[@text='Allow']")));driver.find_element(By.XPATH, "//*[@text='Allow']").click()
+driver.find_element(AppiumBy.ACCESSIBILITY_ID, "Close sheet").click()
+driver.find_element(By.XPATH, "//*[@text='Flights']").click()
+driver.find_element(By.XPATH, "//*[@text='One-way']").click()
+leaving_from_button = driver.find_element(By.XPATH, "//android.view.View[@content-desc='Leaving from Button Cochin (COK-Cochin Intl.)']")
+leaving_from_button.click()
+driver.find_element(By.XPATH, "//android.widget.EditText[@resource-id='SearchLocationInput']").click()
+driver.find_element(By.XPATH, "//*[@resource-id='SearchLocationInput']").clear();
+driver.find_element(By.XPATH, "//*[@resource-id='SearchLocationInput']").send_keys("Cochin");
+driver.find_element(By.XPATH, "//*[@text='Cochin (COK - Cochin Intl.)' and @focusable='false']").click()
+driver.find_element(By.XPATH, "//android.view.View[@resource-id='GoingToButton']").click()
+driver.find_element(By.XPATH, "//android.widget.TextView[@text='Going to']").click()
+driver.find_element(By.XPATH, "//android.widget.EditText[@resource-id='SearchLocationInput']").clear();
+driver.find_element(By.XPATH, "//android.widget.EditText[@resource-id='SearchLocationInput']").send_keys("Bengaluru");
+driver.find_element(By.XPATH, "//*[@text='Bengaluru (BLR - Kempegowda Intl.)' and @focusable='false']").click()
+driver.find_element(By.XPATH, "//*[@resource-id='SearchButton']").click()
+flight_element = driver.find_element(AppiumBy.ACCESSIBILITY_ID, "Select and show fare information for Air India flight, departing at 9:15am from Kochi, arriving at 10:30am in Bengaluru, Priced at $49 One way per traveler, 4 left at this price.  1 hour 15 minutes total travel time, Nonstop. Air India operated by Air India Express Button"); flight_element.click()
+driver.find_element(By.XPATH, "(//*[@text='Select'])[1]").click()
+driver.find_element(By.XPATH, "//*[@resource-id='com.expedia.bookings:id/check_out_button']").click()
